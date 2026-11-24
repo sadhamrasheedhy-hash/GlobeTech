@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlobeTech | Custom Websites, WebApps & Mobile Apps ($100–$500)</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="image/GlobeTech%20Blue%20Orbital%20Logo.png">
+  <meta name="description" content="Need a fast website, WebApp, or mobile app? GlobeTech delivers custom digital solutions on your exact timeline starting at $100. 6+ years experience." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config for Custom Fonts & Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#0B1120',
+            cobalt: '#2563EB',
+            emeraldBrand: '#10B981',
+          },
+          boxShadow: {
+            'soft': '0 10px 30px -5px rgba(11, 17, 32, 0.06)',
+            'card-hover': '0 20px 40px -10px rgba(11, 17, 32, 0.12)',
+            'glow-emerald': '0 10px 25px -5px rgba(16, 185, 129, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Micro-interactions & Scroll Reveal Utilities -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #0B1120;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+    .hero-grid-bg {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased pb-16 md:pb-0">
+
+  <!-- 1. TOP ANNOUNCEMENT BAR -->
+  <div class="bg-cobalt text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+      <span class="inline-flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
+        <span>Now booking projects for this month — Guaranteed on-time delivery starting at <strong>$100</strong>.</span>
+      </span>
+      <button onclick="openQuoteModal('General Inquiry')" class="underline font-semibold hover:text-emerald-200 transition inline-flex items-center gap-1">
+        Get Instant Quote <span>&rarr;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 2. STICKY NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+       <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center overflow-hidden shadow-sm">
+  <img
+    src="image/GlobeTech%20Blue%20Orbital%20Logo.png"
+    alt="GlobeTech Logo"
+    class="w-full h-full object-contain p-0.5"
+  >
+</div>
+        <div>
+          <span class="font-display font-extrabold text-xl tracking-tight text-obsidian">Globe<span class="text-cobalt">Tech</span></span>
+          <span class="hidden sm:block text-[10px] font-semibold uppercase tracking-widest text-slate-400 -mt-1">Web & App Studio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#services" class="hover:text-obsidian transition">Services & Pricing</a>
+        <a href="#portfolio" class="hover:text-obsidian transition">Portfolio</a>
+        <a href="#process" class="hover:text-obsidian transition">Process</a>
+        <a href="#testimonials" class="hover:text-obsidian transition">Reviews</a>
+        <a href="#faq" class="hover:text-obsidian transition">FAQ</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <button onclick="openQuoteModal('Custom Project')" class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition">
+          Project Estimator
+        </button>
+        <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27d%20like%20to%20discuss%20a%20project%20and%20timeline." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-emeraldBrand hover:bg-emerald-600 rounded-xl shadow-sm transition">
+          <!-- WhatsApp SVG Icon -->
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+          <span>WhatsApp Us</span>
+        </a>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Nav -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-2">
+      <a href="#services" class="mobile-nav-link block py-2.5 px-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">Services & Pricing ($100–$500)</a>
+      <a href="#portfolio" class="mobile-nav-link block py-2.5 px-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">Portfolio & Case Studies</a>
+      <a href="#process" class="mobile-nav-link block py-2.5 px-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">4-Step Process & Guarantee</a>
+      <a href="#testimonials" class="mobile-nav-link block py-2.5 px-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">Client Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-2.5 px-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">FAQ</a>
+      <button onclick="openQuoteModal('Custom Project')" class="w-full mt-2 py-3 px-4 rounded-xl bg-cobalt text-white font-semibold text-sm text-center">
+        Open Interactive Price Estimator
+      </button>
+    </div>
+  </header>
+
+  <!-- 3. HERO SECTION -->
+  <section class="bg-obsidian hero-grid-bg text-white relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28">
+    <!-- Subtle Ambient Gradient Accents -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-cobalt/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-emeraldBrand/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Left Column: Copy & CTAs -->
+        <div class="lg:col-span-7 text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-emerald-300 text-xs font-semibold tracking-wider uppercase mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            6+ Years of Experience • Sri Lanka & Global Clients
+          </div>
+
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[54px] leading-[1.1] tracking-tight text-white mb-6">
+            Websites, WebApps & Mobile Apps Delivered <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Strictly on Your Timeline.</span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+            Stop chasing unreliable freelancers or overpaying slow agencies. At <strong class="text-white">GlobeTech</strong>, you work directly with a 6-year veteran developer to launch fast, high-converting digital products—priced transparently between <span class="text-emerald-400 font-semibold">$100 and $500</span>.
+          </p>
+
+          <!-- Hero Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 mb-8">
+            <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%20want%20to%20start%20a%20project.%20My%20target%20timeline%20is..." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-glow-emerald transition transform hover:-translate-y-0.5">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+              <span>Chat on WhatsApp</span>
+            </a>
+            <a href="#portfolio" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-base transition">
+              <span>View Live Projects</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Micro Trust Line -->
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-400">
+            <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Direct Developer Access</span>
+            <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Fixed $100–$500 Quotes</span>
+            <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> 100% Code Ownership</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Layered Product UI Mockup -->
+        <div class="lg:col-span-5 relative">
+          <!-- Main Browser Window Card -->
+          <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-md">
+            <!-- Browser Top Bar -->
+            <div class="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-800">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+              </div>
+              <div class="bg-slate-800 px-3 py-1 rounded-md text-[11px] text-slate-400 font-mono">
+                app.yourbusiness.lk
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">99/100 Speed</span>
+            </div>
+
+            <!-- Interactive Preview Tabs inside Mockup -->
+            <div class="flex gap-2 mb-4">
+              <button onclick="switchHeroMockup('web')" id="mock-tab-web" class="flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-cobalt text-white transition">WebApp Dashboard</button>
+              <button onclick="switchHeroMockup('mobile')" id="mock-tab-mobile" class="flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Mobile App UI</button>
+            </div>
+
+            <!-- Mockup Content: WebApp View -->
+            <div id="mock-view-web" class="space-y-3.5">
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700/60">
+                  <p class="text-[11px] text-slate-400">Monthly Orders</p>
+                  <p class="text-xl font-display font-bold text-white mt-0.5">+148%</p>
+                  <span class="text-[10px] text-emerald-400 font-medium">&uarr; Automated via WebApp</span>
+                </div>
+                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700/60">
+                  <p class="text-[11px] text-slate-400">Delivery Status</p>
+                  <p class="text-xl font-display font-bold text-emerald-400 mt-0.5">On Time</p>
+                  <span class="text-[10px] text-slate-400 font-medium">Launched in 7 Days</span>
+                </div>
+              </div>
+              <!-- Simulated Revenue Bar Chart -->
+              <div class="bg-slate-800/60 p-3.5 rounded-xl border border-slate-700/60">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-xs font-semibold text-slate-200">Live Conversion Growth</span>
+                  <span class="text-[11px] text-emerald-400 font-semibold">Active</span>
+                </div>
+                <div class="flex items-end gap-2 h-20 pt-2">
+                  <div class="flex-1 bg-cobalt/40 rounded-t h-[38%]"></div>
+                  <div class="flex-1 bg-cobalt/60 rounded-t h-[52%]"></div>
+                  <div class="flex-1 bg-cobalt/75 rounded-t h-[65%]"></div>
+                  <div class="flex-1 bg-cobalt rounded-t h-[82%]"></div>
+                  <div class="flex-1 bg-emeraldBrand rounded-t h-[100%]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mockup Content: Mobile App View -->
+            <div id="mock-view-mobile" class="hidden space-y-3">
+              <div class="bg-slate-800/90 rounded-xl p-4 border border-slate-700/70 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold">iOS & Android Build</span>
+                  <h4 class="font-display font-bold text-white text-sm mt-0.5">Customer Booking & POS App</h4>
+                  <p class="text-xs text-slate-400 mt-1">Push notifications • Real-time sync</p>
+                </div>
+                <div class="w-11 h-11 rounded-xl bg-emeraldBrand/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+                  APK
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700/50">
+                  <p class="text-xs font-bold text-white">60 FPS</p>
+                  <p class="text-[10px] text-slate-400">Smooth UI</p>
+                </div>
+                <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700/50">
+                  <p class="text-xs font-bold text-white">Offline</p>
+                  <p class="text-[10px] text-slate-400">Ready</p>
+                </div>
+                <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700/50">
+                  <p class="text-xs font-bold text-emerald-400">$300+</p>
+                  <p class="text-[10px] text-slate-400">Fixed Cost</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Deadline Commitment Badge -->
+          <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-5 sm:-left-5 bg-white text-obsidian px-4 py-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-display font-extrabold text-sm text-obsidian">100% On-Time Delivery</p>
+              <p class="text-xs text-slate-500">Your deadline locked before kickoff</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TRUST & METRICS BAR -->
+  <section class="bg-slate-50 border-b border-slate-200/80 py-8 sm:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center sm:text-left">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-blue-100 text-cobalt flex items-center justify-center font-display font-extrabold text-lg shrink-0">6+</div>
+          <div>
+            <p class="font-display font-bold text-obsidian text-base sm:text-lg">6+ Years Experience</p>
+            <p class="text-xs sm:text-sm text-slate-500">Proven Web & App Engineering</p>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-display font-extrabold text-base shrink-0">100%</div>
+          <div>
+            <p class="font-display font-bold text-obsidian text-base sm:text-lg">On-Time Delivery</p>
+            <p class="text-xs sm:text-sm text-slate-500">Delivered strictly on your schedule</p>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-display font-extrabold text-sm shrink-0">$100+</div>
+          <div>
+            <p class="font-display font-bold text-obsidian text-base sm:text-lg">$100 – $500 Plans</p>
+            <p class="text-xs sm:text-sm text-slate-500">Clear, fixed, zero-surprise pricing</p>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-display font-extrabold text-sm shrink-0">1:1</div>
+          <div>
+            <p class="font-display font-bold text-obsidian text-base sm:text-lg">Direct Developer</p>
+            <p class="text-xs sm:text-sm text-slate-500">Fast WhatsApp & call updates</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PROBLEM SECTION -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 bg-rose-50 px-3 py-1 rounded-full">The Industry Problem</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-obsidian mt-3 tracking-tight">
+          Why Most Business Software Projects Fail Before Launch
+        </h2>
+        <p class="text-slate-600 mt-3 text-base sm:text-lg">
+          Hiring the wrong developer costs more than money—it stalls your business growth and wastes months of your time.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Card 1 -->
+        <div class="reveal bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
+          <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-obsidian mb-2.5">Missed Deadlines</h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Weeks turn into months with endless excuses, delaying your product launch, marketing campaigns, and customer revenue.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reveal bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-obsidian mb-2.5">Surprise Invoices</h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Low initial quotes suddenly balloon into hidden charges for mobile responsiveness, basic revisions, or server deployment.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reveal bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-obsidian mb-2.5">Zero Support After Launch</h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Once the final payment clears, the freelancer disappears—leaving your business stuck whenever you need an update or fix.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SOLUTION & SERVICES SECTION -->
+  <section id="services" class="py-16 sm:py-24 bg-slate-50 border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Solution Header -->
+      <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-cobalt bg-blue-100/80 px-3.5 py-1.5 rounded-full">The GlobeTech Standard</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-obsidian mt-3 tracking-tight">
+          Your Business Comes First. Your Deadline Is Non-Negotiable.
+        </h2>
+        <p class="text-slate-600 mt-3 text-base sm:text-lg">
+          No middlemen, no bloated retainers, and no missed dates. Pick the solution your business needs with transparent, fixed pricing.
+        </p>
+      </div>
+
+      <!-- 3 Core Service Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 sm:gap-8">
+        
+        <!-- Service 1: Websites -->
+        <div class="reveal bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 flex flex-col justify-between hover:shadow-card-hover hover:-translate-y-1 transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-5">
+              <span class="px-3 py-1 rounded-lg bg-blue-50 text-cobalt text-xs font-bold uppercase tracking-wide">Websites</span>
+              <span class="text-xs font-semibold text-slate-400">3–7 Days Delivery</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-obsidian mb-2">Custom Business Websites</h3>
+            <div class="flex items-baseline gap-1.5 mb-4">
+              <span class="text-sm text-slate-500">From</span>
+              <span class="font-display font-extrabold text-3xl text-obsidian">$100</span>
+              <span class="text-xs text-slate-400">– $250</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Fast-loading, SEO-ready, mobile-first websites engineered to convert local and global visitors into paying customers.
+            </p>
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>100% Mobile & Tablet Responsive UI</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Direct WhatsApp & Lead Form Integration</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>On-Page Google SEO & Fast PageSpeed</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Easy Content Management & Free SSL Setup</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openQuoteModal('Custom Website ($100–$250)')" class="w-full py-3.5 px-5 rounded-xl bg-slate-900 hover:bg-cobalt text-white font-semibold text-sm transition flex items-center justify-center gap-2">
+            <span>Configure Website Quote</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Service 2: WebApps (Featured) -->
+        <div class="reveal bg-obsidian text-white rounded-2xl border-2 border-cobalt p-7 sm:p-8 flex flex-col justify-between shadow-xl relative hover:-translate-y-1 transition-all">
+          <div class="absolute -top-3.5 right-6 bg-cobalt text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+            Most Popular for Growth
+          </div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-5">
+              <span class="px-3 py-1 rounded-lg bg-white/10 text-emerald-300 text-xs font-bold uppercase tracking-wide">WebApps</span>
+              <span class="text-xs font-semibold text-slate-400">7–14 Days Delivery</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-white mb-2">Custom Web Applications</h3>
+            <div class="flex items-baseline gap-1.5 mb-4">
+              <span class="text-sm text-slate-400">From</span>
+              <span class="font-display font-extrabold text-3xl text-white">$250</span>
+              <span class="text-xs text-slate-400">– $450</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Tailored dashboards, booking engines, POS/inventory systems, and SaaS MVPs built to automate your daily operations.
+            </p>
+            <ul class="space-y-3 text-sm text-slate-200 mb-8">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Custom Admin Dashboard & User Roles</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Secure Cloud Database & API Integrations</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Payment Gateway & Automated Reporting</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Full Source Code & Deployment Handover</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openQuoteModal('Custom WebApp ($250–$450)')" class="w-full py-3.5 px-5 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-sm shadow-glow-emerald transition flex items-center justify-center gap-2">
+            <span>Configure WebApp Quote</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Service 3: Mobile Apps -->
+        <div class="reveal bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 flex flex-col justify-between hover:shadow-card-hover hover:-translate-y-1 transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-5">
+              <span class="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wide">Mobile Apps</span>
+              <span class="text-xs font-semibold text-slate-400">10–21 Days Delivery</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-obsidian mb-2">iOS & Android Mobile Apps</h3>
+            <div class="flex items-baseline gap-1.5 mb-4">
+              <span class="text-sm text-slate-500">From</span>
+              <span class="font-display font-extrabold text-3xl text-obsidian">$300</span>
+              <span class="text-xs text-slate-400">– $500</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Smooth, cross-platform mobile applications with intuitive UI, push notifications, and reliable backend sync.
+            </p>
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Android & iOS Cross-Platform Build</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Push Notifications & User Authentication</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Admin Panel to Control App Content</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>APK/IPA Build + Store Publishing Guidance</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openQuoteModal('Mobile App ($300–$500)')" class="w-full py-3.5 px-5 rounded-xl bg-slate-900 hover:bg-cobalt text-white font-semibold text-sm transition flex items-center justify-center gap-2">
+            <span>Configure Mobile App Quote</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PORTFOLIO SHOWCASE WITH FILTER TABS -->
+  <section id="portfolio" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Selected Work</span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-obsidian mt-3 tracking-tight">
+            Built for Speed. Designed to Convert.
+          </h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" role="tablist" aria-label="Portfolio Categories">
+          <button onclick="filterPortfolio('all')" class="portfolio-filter active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-obsidian text-white transition" data-filter="all">All Projects</button>
+          <button onclick="filterPortfolio('website')" class="portfolio-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="website">Websites</button>
+          <button onclick="filterPortfolio('webapp')" class="portfolio-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="webapp">WebApps</button>
+          <button onclick="filterPortfolio('mobile')" class="portfolio-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="mobile">Mobile Apps</button>
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7 sm:gap-8">
+        
+        <!-- Project 1 -->
+        <article class="portfolio-card reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="website">
+          <div class="h-48 bg-gradient-to-br from-slate-900 via-blue-950 to-cobalt p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="flex justify-between items-center z-10">
+              <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-white text-[11px] font-semibold">Website</span>
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">Delivered in 5 Days</span>
+            </div>
+            <div class="z-10">
+              <p class="text-white/70 text-xs font-mono">Retail & Commercial</p>
+              <h4 class="font-display font-bold text-white text-lg">LankaPrime Agro & Hardware</h4>
+            </div>
+            <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-white/10 group-hover:scale-125 transition-transform"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
+              <span>Result: +45% Mobile WhatsApp Inquiries</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-5">
+              High-speed product catalog and lead-capture website built for a regional supplier in North Central Province with instant WhatsApp order routing.
+            </p>
+            <button onclick="openQuoteModal('Similar to LankaPrime Website')" class="text-sm font-bold text-cobalt hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              <span>Request Similar Website</span> <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="portfolio-card reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="webapp">
+          <div class="h-48 bg-gradient-to-br from-obsidian via-slate-800 to-emerald-950 p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="flex justify-between items-center z-10">
+              <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-white text-[11px] font-semibold">WebApp</span>
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">Delivered in 11 Days</span>
+            </div>
+            <div class="z-10">
+              <p class="text-white/70 text-xs font-mono">SaaS & Operations</p>
+              <h4 class="font-display font-bold text-white text-lg">SwiftStock POS & Billing Portal</h4>
+            </div>
+            <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-emerald-400/10 group-hover:scale-125 transition-transform"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
+              <span>Result: Saved 14+ Hrs/Week Manual Billing</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-5">
+              Cloud inventory tracker, invoice generator, and multi-staff sales dashboard replacing messy spreadsheets for a growing retail chain.
+            </p>
+            <button onclick="openQuoteModal('Similar to SwiftStock WebApp')" class="text-sm font-bold text-cobalt hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              <span>Request Similar WebApp</span> <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="portfolio-card reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="mobile">
+          <div class="h-48 bg-gradient-to-br from-indigo-950 via-slate-900 to-purple-950 p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="flex justify-between items-center z-10">
+              <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-white text-[11px] font-semibold">Mobile App</span>
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">Delivered in 14 Days</span>
+            </div>
+            <div class="z-10">
+              <p class="text-white/70 text-xs font-mono">iOS & Android</p>
+              <h4 class="font-display font-bold text-white text-lg">QuickRide & Delivery Booking App</h4>
+            </div>
+            <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-purple-400/10 group-hover:scale-125 transition-transform"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
+              <span>Result: 1,200+ Active Local Downloads</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-5">
+              Cross-platform customer and driver mobile app featuring live status updates, push alerts, and an admin dispatch panel.
+            </p>
+            <button onclick="openQuoteModal('Similar to QuickRide Mobile App')" class="text-sm font-bold text-cobalt hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              <span>Request Similar Mobile App</span> <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PROCESS TIMELINE & GUARANTEE -->
+  <section id="process" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-cobalt bg-blue-100/80 px-3.5 py-1.5 rounded-full">Simple Workflow</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-obsidian mt-3 tracking-tight">
+          From Idea to Launch in 4 Simple Steps
+        </h2>
+        <p class="text-slate-600 mt-3 text-base sm:text-lg">
+          A transparent, milestone-driven process designed so you always know what is being built and when it launches.
+        </p>
+      </div>
+
+      <!-- 4 Steps Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+          <span class="font-display font-extrabold text-4xl text-blue-100 block mb-3">01</span>
+          <h3 class="font-display font-bold text-lg text-obsidian mb-2">15-Min Scope & Quote</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Share your idea and target launch date. Receive a clear, fixed quote ($100–$500) the very same day.</p>
+        </div>
+        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+          <span class="font-display font-extrabold text-4xl text-blue-100 block mb-3">02</span>
+          <h3 class="font-display font-bold text-lg text-obsidian mb-2">UI Wireframe & Kickoff</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Review and approve the visual layout and user flow before full coding begins—zero guesswork.</p>
+        </div>
+        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+          <span class="font-display font-extrabold text-4xl text-blue-100 block mb-3">03</span>
+          <h3 class="font-display font-bold text-lg text-obsidian mb-2">Rapid Build & Previews</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Track progress via private live staging links with direct WhatsApp updates as features go live.</p>
+        </div>
+        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+          <span class="font-display font-extrabold text-4xl text-emerald-100 block mb-3">04</span>
+          <h3 class="font-display font-bold text-lg text-obsidian mb-2">On-Time Launch</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Full testing on mobile & desktop, live deployment, and 100% source code & account handover.</p>
+        </div>
+      </div>
+
+      <!-- Risk Reversal / Deadline Commitment Box -->
+      <div class="reveal bg-obsidian text-white rounded-3xl p-7 sm:p-10 lg:p-12 border border-slate-800 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Risk-Free Guarantee
+          </div>
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-3">
+            The GlobeTech Timeline Commitment
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Over 6 years of building websites, web apps, and mobile apps, one rule has guided every project: <strong class="text-white">the customer’s timeline is sacred.</strong> We lock in your delivery date in writing before starting—and you only pay final balance once your project is tested and ready to launch.
+          </p>
+        </div>
+        <div class="w-full lg:w-auto shrink-0">
+          <button onclick="openQuoteModal('Deadline-Guaranteed Project')" class="w-full lg:w-auto px-7 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-glow-emerald transition">
+            Lock In Your Launch Date &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. TESTIMONIALS -->
+  <section id="testimonials" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-cobalt bg-blue-50 px-3.5 py-1.5 rounded-full">Client Feedback</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-obsidian mt-3 tracking-tight">
+          Trusted by Business Owners Who Value Their Time
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <!-- Review 1 -->
+        <div class="reveal bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+              "GlobeTech delivered our company website two days ahead of schedule. The design looks like a $2,000 agency build, and communication on WhatsApp was effortless."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+            <div class="w-10 h-10 rounded-full bg-cobalt text-white font-display font-bold flex items-center justify-center text-sm">KP</div>
+            <div>
+              <p class="font-display font-bold text-sm text-obsidian">Kasun Perera</p>
+              <p class="text-xs text-slate-500">Business Owner • Anuradhapura</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="reveal bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+              "Other developers quoted me three months for our booking WebApp. GlobeTech built and launched it in under two weeks well within our $400 budget."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+            <div class="w-10 h-10 rounded-full bg-emeraldBrand text-white font-display font-bold flex items-center justify-center text-sm">NF</div>
+            <div>
+              <p class="font-display font-bold text-sm text-obsidian">Nimali Fernando</p>
+              <p class="text-xs text-slate-500">Startup Founder • Colombo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="reveal bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+              "Honest pricing, zero technical headaches, and fast support whenever we want to add a new feature to our mobile app. Highly recommended."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+            <div class="w-10 h-10 rounded-full bg-obsidian text-white font-display font-bold flex items-center justify-center text-sm">DM</div>
+            <div>
+              <p class="font-display font-bold text-sm text-obsidian">David Miller</p>
+              <p class="text-xs text-slate-500">E-Commerce Director • Remote Client</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. INTERACTIVE FAQ ACCORDION -->
+  <section id="faq" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-cobalt bg-blue-100/80 px-3.5 py-1.5 rounded-full">Clear Answers</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-obsidian mt-3 tracking-tight">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-3.5 reveal" id="faq-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-obsidian hover:text-cobalt transition">
+            <span>How can you deliver custom websites and apps for $100–$500?</span>
+            <span class="faq-icon text-xl font-normal text-slate-400 transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 pt-3">
+            You work directly with an experienced 6-year developer—there is no expensive agency office overhead, middleman sales reps, or bloated retainers. You pay purely for efficient, senior-level engineering.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-obsidian hover:text-cobalt transition">
+            <span>How fast can my project be completed?</span>
+            <span class="faq-icon text-xl font-normal text-slate-400 transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 pt-3">
+            Standard business websites take <strong>3–7 days</strong>. Custom WebApps and Mobile Apps typically take <strong>7–21 days</strong> depending on features. We lock in your exact delivery date before starting.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-obsidian hover:text-cobalt transition">
+            <span>Do I own 100% of the source code and design?</span>
+            <span class="faq-icon text-xl font-normal text-slate-400 transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 pt-3">
+            Yes, 100%. Upon project completion, you receive full ownership of your domain, hosting accounts, source code repository, and databases with zero lock-in.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-obsidian hover:text-cobalt transition">
+            <span>Will my website or app work properly on all mobile phones?</span>
+            <span class="faq-icon text-xl font-normal text-slate-400 transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 pt-3">
+            Every project is engineered mobile-first and tested across Android, iOS, tablet, and desktop screen sizes before launch to guarantee smooth scrolling and thumb-friendly navigation.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-obsidian hover:text-cobalt transition">
+            <span>What do you need from me to get started today?</span>
+            <span class="faq-icon text-xl font-normal text-slate-400 transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 pt-3">
+            Just send a quick message on WhatsApp or use the Project Estimator button on this page with your business name, what you want to build, and your target launch date.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FINAL CTA BANNER -->
+  <section class="bg-obsidian hero-grid-bg text-white py-16 sm:py-24 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+      <span class="inline-block px-3.5 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">
+        Start Today • Kiribbewa, Sri Lanka & Worldwide
+      </span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-5">
+        Ready to Launch Without the Delays?
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-9 leading-relaxed">
+        Message me directly with your project idea and target deadline. Get a fixed quote between $100 and $500 and let’s build something your customers love.
+      </p>
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
+        <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27m%20ready%20to%20discuss%20my%20project!" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-glow-emerald transition">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+          <span>Message on WhatsApp Now</span>
+        </a>
+        <button onclick="openQuoteModal('Custom Project Quote')" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-base transition">
+          <span>Calculate Your Project Quote</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-900 py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-slate-800/80">
+        <!-- Brand Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2.5 mb-4">
+            <div class="w-9 h-9 rounded-xl bg-cobalt flex items-center justify-center text-white font-bold">G</div>
+            <span class="font-display font-extrabold text-xl text-white">Globe<span class="text-cobalt">Tech</span></span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-md leading-relaxed mb-4">
+            Customer-first Website, WebApp, and Mobile App development studio with 6+ years of experience. Every project delivered strictly on your timeline.
+          </p>
+          <p class="text-xs text-slate-500">
+            📍 Kiribbewa, Kahatagasdigiliya, Anuradhapura, Sri Lanka
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Services</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#services" class="hover:text-white transition">Business Websites ($100+)</a></li>
+            <li><a href="#services" class="hover:text-white transition">Custom WebApps ($250+)</a></li>
+            <li><a href="#services" class="hover:text-white transition">Mobile Apps ($300+)</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition">Live Portfolio</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Direct Contact</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="https://wa.me/94774483601" target="_blank" rel="noopener" class="text-emerald-400 hover:underline font-medium">WhatsApp Direct Chat</a></li>
+            <li><button onclick="openQuoteModal('General Inquiry')" class="hover:text-white transition">Request Free Quote</button></li>
+            <li><a href="#faq" class="hover:text-white transition">FAQ & Timeline Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; <span id="year"></span> GlobeTech. All rights reserved.</p>
+        <p>Built for Speed • On-Time Delivery Guaranteed</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 12. STICKY MOBILE BOTTOM CONVERSION BAR (<768px) -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 flex items-center gap-2.5 shadow-2xl">
+    <button onclick="openQuoteModal('Mobile Quick Quote')" class="flex-1 py-3 px-3 rounded-xl bg-slate-100 text-obsidian font-semibold text-xs text-center">
+      Get Quote ($100+)
+    </button>
+    <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="flex-[1.4] py-3 px-4 rounded-xl bg-emeraldBrand text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-sm">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+      <span>Chat on WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- INTERACTIVE PROJECT QUOTE ESTIMATOR MODAL -->
+  <div id="quote-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-obsidian/75 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-fadeIn">
+      <button onclick="closeQuoteModal()" aria-label="Close modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 font-bold">
+        &times;
+      </button>
+
+      <span class="text-xs font-bold uppercase tracking-widest text-cobalt bg-blue-50 px-3 py-1 rounded-full">Instant WhatsApp Brief</span>
+      <h3 id="modal-title" class="font-display font-extrabold text-2xl text-obsidian mt-2.5">Get Your Fixed Quote</h3>
+      <p class="text-slate-500 text-sm mt-1 mb-5">Select your project type and desired deadline to send a ready-to-quote brief directly to GlobeTech.</p>
+
+      <form id="quote-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Project Type</label>
+          <select id="quote-service" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-medium text-obsidian focus:outline-none focus:border-cobalt">
+            <option value="Custom Website ($100–$250)">Custom Business Website ($100 – $250)</option>
+            <option value="Custom WebApp ($250–$450)">Custom Web Application ($250 – $450)</option>
+            <option value="Mobile App ($300–$500)">iOS & Android Mobile App ($300 – $500)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Your Name / Business</label>
+            <input type="text" id="quote-name" required placeholder="e.g. Kasun / Lanka Store" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-cobalt" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Target Timeline</label>
+            <select id="quote-timeline" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-medium text-obsidian focus:outline-none focus:border-cobalt">
+              <option value="Within 5–7 Days (Urgent)">Within 5–7 Days (Urgent)</option>
+              <option value="Within 2 Weeks">Within 2 Weeks</option>
+              <option value="Within 3–4 Weeks">Within 3–4 Weeks</option>
+              <option value="Flexible / Discussing">Flexible / Discussing</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Key Features Needed</label>
+          <textarea id="quote-notes" rows="3" placeholder="Briefly describe what you need (e.g., 5-page company site, online booking, POS app)..." class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-cobalt"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-4 px-6 rounded-xl bg-emeraldBrand hover:bg-emerald-600 text-white font-semibold text-sm sm:text-base shadow-glow-emerald transition flex items-center justify-center gap-2">
+          <span>Send Brief via WhatsApp</span>
+          <span>&rarr;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT INTERACTIONS -->
+  <script>
+    // 1. Set Current Year in Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // 3. Hero Interactive Mockup Switcher
+    function switchHeroMockup(type) {
+      const webTab = document.getElementById('mock-tab-web');
+      const mobileTab = document.getElementById('mock-tab-mobile');
+      const webView = document.getElementById('mock-view-web');
+      const mobileView = document.getElementById('mock-view-mobile');
+
+      if (type === 'web') {
+        webTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-cobalt text-white transition';
+        mobileTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
+        webView.classList.remove('hidden');
+        mobileView.classList.add('hidden');
+      } else {
+        mobileTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-cobalt text-white transition';
+        webTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
+        mobileView.classList.remove('hidden');
+        webView.classList.add('hidden');
+      }
+    }
+
+    // 4. Portfolio Category Filter
+    function filterPortfolio(category) {
+      const buttons = document.querySelectorAll('.portfolio-filter');
+      const cards = document.querySelectorAll('.portfolio-card');
+
+      buttons.forEach(btn => {
+        if (btn.dataset.filter === category) {
+          btn.className = 'portfolio-filter active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-obsidian text-white transition';
+        } else {
+          btn.className = 'portfolio-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // 5. FAQ Accordion Logic
+    document.querySelectorAll('.faq-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all other items for clean UX
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => {
+          i.textContent = '+';
+          i.classList.remove('rotate-45');
+        });
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.textContent = '+';
+          icon.classList.add('rotate-45');
+        }
+      });
+    });
+
+    // 6. Quote Estimator Modal Controls & WhatsApp Redirect
+    const quoteModal = document.getElementById('quote-modal');
+    const quoteServiceSelect = document.getElementById('quote-service');
+    const quoteNotesInput = document.getElementById('quote-notes');
+
+    function openQuoteModal(presetContext) {
+      quoteModal.classList.remove('hidden');
+      quoteModal.classList.add('flex');
+      if (presetContext) {
+        if (presetContext.includes('Website')) quoteServiceSelect.selectedIndex = 0;
+        else if (presetContext.includes('WebApp')) quoteServiceSelect.selectedIndex = 1;
+        else if (presetContext.includes('Mobile')) quoteServiceSelect.selectedIndex = 2;
+        quoteNotesInput.value = `Interested in: ${presetContext}`;
+      }
+    }
+
+    function closeQuoteModal() {
+      quoteModal.classList.add('hidden');
+      quoteModal.classList.remove('flex');
+    }
+
+    quoteModal.addEventListener('click', (e) => {
+      if (e.target === quoteModal) closeQuoteModal();
+    });
+
+    document.getElementById('quote-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const service = document.getElementById('quote-service').value;
+      const name = document.getElementById('quote-name').value.trim();
+      const timeline = document.getElementById('quote-timeline').value;
+      const notes = document.getElementById('quote-notes').value.trim();
+
+      const message = `Hi GlobeTech! I'd like a project quote:\n• Name/Business: ${name}\n• Service: ${service}\n• Target Timeline: ${timeline}\n• Details: ${notes || 'N/A'}`;
+      const waUrl = `https://wa.me/94774483601?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank', 'noopener');
+      closeQuoteModal();
+    });
+
+    // 7. Scroll Reveal Intersection Observer
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
