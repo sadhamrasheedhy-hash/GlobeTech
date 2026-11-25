@@ -7,10 +7,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="GlobeTech%20Blue%20Orbital%20Logo.png">
   <meta name="description" content="Need a fast website, WebApp, or mobile app? GlobeTech delivers custom digital solutions on your exact timeline starting at $100. 6+ years experience." />
   
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Google Font: Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,8 +21,8 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Manrope', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
           },
           colors: {
             obsidian: '#0B1120',
@@ -42,12 +42,225 @@
   <!-- Custom Micro-interactions & Scroll Reveal Utilities -->
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Manrope', sans-serif;
       color: #0B1120;
       overflow-x: hidden;
+      background-color: #F4F6FC !important;
     }
     h1, h2, h3, h4, .font-display {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Manrope', sans-serif;
+    }
+    h1 {
+      font-size: 2.25rem !important;
+      line-height: 1.12 !important;
+      letter-spacing: -0.035em !important;
+    }
+    h2 {
+      font-size: 1.75rem !important;
+      line-height: 1.2 !important;
+      letter-spacing: -0.025em !important;
+    }
+    h3 {
+      font-size: 1.25rem !important;
+      line-height: 1.35 !important;
+    }
+    .font-extrabold {
+      font-weight: 700 !important;
+    }
+    .font-bold, strong, b {
+      font-weight: 600 !important;
+    }
+    .font-semibold {
+      font-weight: 500 !important;
+    }
+    p {
+      letter-spacing: -0.005em;
+    }
+    .rounded-2xl, .rounded-3xl {
+      border-radius: 0.875rem !important;
+    }
+    .rounded-xl {
+      border-radius: 0.625rem !important;
+    }
+    button {
+      transition: color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+    button[class*="bg-"], a[class*="bg-"] {
+      border-radius: 0.5rem !important;
+      min-height: 42px;
+      padding-block: 0.7rem !important;
+      line-height: 1.25;
+      transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+    button[aria-label="Close modal"] {
+      min-width: 42px;
+      min-height: 42px;
+    }
+    a[aria-label="WhatsApp Us"] {
+      min-width: 42px;
+    }
+    nav .nav-link {
+      position: relative;
+      transition: color 180ms ease;
+    }
+    nav .nav-link::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -0.5rem;
+      left: 0;
+      height: 2px;
+      background-color: #2563EB;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+    nav .nav-link:hover::after, nav .nav-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+    button[class*="bg-"]:focus-visible, a[class*="bg-"]:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.45);
+      outline-offset: 2px;
+    }
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      padding: 0 !important;
+    }
+    .announcement-bar {
+      background-color: #FFFFFF !important;
+      border-bottom: 1px solid #E8EAF1;
+      color: #475569 !important;
+      padding-block: 0.45rem !important;
+    }
+    .announcement-bar button {
+      color: #2563EB !important;
+    }
+    header {
+      max-width: 1440px;
+      margin-inline: auto;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 8px 22px -20px rgba(11, 17, 32, 0.32);
+    }
+    .hero-section {
+      max-width: 1440px;
+      margin: 1.25rem auto 0;
+      border-radius: 26px;
+      box-shadow: 0 22px 48px -36px rgba(11, 17, 32, 0.45);
+    }
+    .trust-strip {
+      max-width: 1320px;
+      margin: 1.25rem auto 0;
+      border: 1px solid #E8EAF1;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px -24px rgba(11, 17, 32, 0.28);
+      padding-block: 1.25rem !important;
+    }
+    .trust-strip .grid > div {
+      padding: 0.75rem;
+      border-radius: 12px;
+      background-color: #F8FAFC;
+    }
+    section[class~="py-16"] {
+      padding-block: clamp(3.25rem, 5vw, 4.75rem) !important;
+    }
+    .depth-card, .faq-item {
+      border-radius: 16px;
+      box-shadow: 0 10px 24px -24px rgba(11, 17, 32, 0.35);
+    }
+    .final-cta {
+      max-width: 1440px;
+      margin: 1rem auto 0;
+      border-radius: 24px 24px 0 0;
+    }
+    html.dark-mode .announcement-bar {
+      background-color: #0F172A !important;
+      border-color: #334155 !important;
+      color: #CBD5E1 !important;
+    }
+    html.dark-mode .announcement-bar button {
+      color: #93C5FD !important;
+    }
+    html.dark-mode .trust-strip .grid > div {
+      background-color: #1E293B;
+    }
+    html.dark-mode body {
+      background-color: #0B1120 !important;
+      color: #E2E8F0 !important;
+    }
+    html.dark-mode header,
+    html.dark-mode .fixed.bottom-0 {
+      background-color: rgba(15, 23, 42, 0.96) !important;
+      border-color: #334155 !important;
+    }
+    html.dark-mode .bg-white,
+    html.dark-mode .bg-slate-50 {
+      background-color: #111827 !important;
+    }
+    html.dark-mode .bg-slate-100 {
+      background-color: #1E293B !important;
+    }
+    html.dark-mode .bg-slate-200 {
+      background-color: #334155 !important;
+    }
+    html.dark-mode .text-obsidian,
+    html.dark-mode .text-slate-900 {
+      color: #F1F5F9 !important;
+    }
+    html.dark-mode .text-slate-700,
+    html.dark-mode .text-slate-600 {
+      color: #CBD5E1 !important;
+    }
+    html.dark-mode .text-slate-500 {
+      color: #94A3B8 !important;
+    }
+    html.dark-mode [class*="border-slate-100"],
+    html.dark-mode [class*="border-slate-200"],
+    html.dark-mode [class*="border-slate-300"] {
+      border-color: #334155 !important;
+    }
+    html.dark-mode input,
+    html.dark-mode select,
+    html.dark-mode textarea {
+      background-color: #1E293B !important;
+      border-color: #475569 !important;
+      color: #F1F5F9 !important;
+    }
+    html.dark-mode input::placeholder,
+    html.dark-mode textarea::placeholder {
+      color: #94A3B8 !important;
+    }
+    html.dark-mode .theme-toggle {
+      border-color: #475569 !important;
+      color: #E2E8F0 !important;
+    }
+    html.dark-mode .theme-toggle:hover {
+      background-color: #1E293B !important;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      button:not(.faq-btn):hover, a[class*="bg-"]:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 12px -9px rgba(11, 17, 32, 0.45);
+      }
+    }
+    button:not(.faq-btn):active, a[class*="bg-"]:active {
+      transform: translateY(0);
+    }
+    @media (min-width: 640px) {
+      h1 {
+        font-size: 2.75rem !important;
+      }
+      h2 {
+        font-size: 2.125rem !important;
+      }
+    }
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: clamp(2.45rem, 3.75vw, 3rem) !important;
+      }
+      h2 {
+        font-size: 2.25rem !important;
+      }
     }
     .reveal {
       opacity: 0;
@@ -65,16 +278,60 @@
         transition: none;
       }
     }
-    .hero-grid-bg {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 28px 28px;
+    .hero-mockup {
+      transform: perspective(1200px) rotateY(-2deg) rotateX(1deg);
+      transform-style: preserve-3d;
+      box-shadow: 0 22px 42px -28px rgba(0, 0, 0, 0.65), 0 10px 24px -18px rgba(37, 99, 235, 0.45);
+      transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+    .hero-mockup:hover {
+      transform: perspective(1200px) rotateY(-1deg) translateY(-3px);
+      box-shadow: 0 28px 48px -28px rgba(0, 0, 0, 0.68), 0 12px 26px -18px rgba(37, 99, 235, 0.4);
+    }
+    .depth-card {
+      box-shadow: 0 8px 18px -16px rgba(11, 17, 32, 0.3);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .reveal.visible.depth-card:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 16px 26px -18px rgba(11, 17, 32, 0.3);
+      }
+    }
+    @media (max-width: 1023px) {
+      .hero-mockup {
+        transform: perspective(1200px) rotateX(1deg);
+      }
+    }
+    @media (max-width: 639px) {
+      .hero-mockup {
+        transform: none;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-mockup, .depth-card {
+        transition: none;
+      }
+      button, a[class*="bg-"] {
+        transition: none;
+      }
+      button:not(.faq-btn):hover, a[class*="bg-"]:hover,
+      button:not(.faq-btn):active, a[class*="bg-"]:active {
+        transform: none;
+      }
+      nav .nav-link, nav .nav-link::after {
+        transition: none;
+      }
+      .hero-mockup, .hero-mockup:hover {
+        transform: none;
+      }
     }
   </style>
 </head>
 <body class="bg-white text-slate-900 antialiased pb-16 md:pb-0">
 
   <!-- 1. TOP ANNOUNCEMENT BAR -->
-  <div class="bg-cobalt text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium relative z-50">
+  <div class="announcement-bar text-xs sm:text-sm py-2.5 px-4 text-center font-medium relative z-50">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
       <span class="inline-flex items-center gap-1.5">
         <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
@@ -106,22 +363,26 @@
 
       <!-- Desktop Nav Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-        <a href="#services" class="hover:text-obsidian transition">Services & Pricing</a>
-        <a href="#portfolio" class="hover:text-obsidian transition">Portfolio</a>
-        <a href="#process" class="hover:text-obsidian transition">Process</a>
-        <a href="#testimonials" class="hover:text-obsidian transition">Reviews</a>
-        <a href="#faq" class="hover:text-obsidian transition">FAQ</a>
+        <a href="#services" class="nav-link hover:text-obsidian transition">Services & Pricing</a>
+        <a href="#portfolio" class="nav-link hover:text-obsidian transition">Portfolio</a>
+        <a href="#process" class="nav-link hover:text-obsidian transition">Process</a>
+        <a href="#testimonials" class="nav-link hover:text-obsidian transition">Reviews</a>
+        <a href="#faq" class="nav-link hover:text-obsidian transition">FAQ</a>
       </nav>
 
       <!-- Header CTAs -->
       <div class="flex items-center gap-2.5 sm:gap-3">
+        <button id="theme-toggle" class="theme-toggle inline-flex items-center justify-center rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-100" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.463.402.807a6.5 6.5 0 0 0 8.832 8.832c.344-.215.829-.003.807.402Z"/>
+          </svg>
+        </button>
         <button onclick="openQuoteModal('Custom Project')" class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition">
           Project Estimator
         </button>
-        <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27d%20like%20to%20discuss%20a%20project%20and%20timeline." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-emeraldBrand hover:bg-emerald-600 rounded-xl shadow-sm transition">
+        <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27d%20like%20to%20discuss%20a%20project%20and%20timeline." target="_blank" rel="noopener" aria-label="WhatsApp Us" title="WhatsApp Us" class="inline-flex items-center justify-center w-10 h-10 text-white bg-emeraldBrand hover:bg-emerald-600 rounded-xl shadow-sm transition">
           <!-- WhatsApp SVG Icon -->
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
-          <span>WhatsApp Us</span>
+          <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
         </a>
         <!-- Mobile Menu Toggle -->
         <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100">
@@ -146,10 +407,11 @@
   </header>
 
   <!-- 3. HERO SECTION -->
-  <section class="bg-obsidian hero-grid-bg text-white relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28">
-    <!-- Subtle Ambient Gradient Accents -->
-    <div class="absolute -top-24 -left-24 w-96 h-96 bg-cobalt/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-emeraldBrand/10 rounded-full blur-3xl pointer-events-none"></div>
+  <section class="hero-section bg-obsidian text-white relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28">
+    <video class="absolute inset-0 w-full h-full object-cover opacity-45 pointer-events-none" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+      <source src="globetech-3d-orbital.webm" type="video/webm">
+    </video>
+    <div class="absolute inset-0 bg-obsidian/55 pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
@@ -162,7 +424,7 @@
           </div>
 
           <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[54px] leading-[1.1] tracking-tight text-white mb-6">
-            Websites, WebApps & Mobile Apps Delivered <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Strictly on Your Timeline.</span>
+            Websites, WebApps & Mobile Apps Delivered <span class="text-emerald-300">Strictly on Your Timeline.</span>
           </h1>
 
           <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
@@ -171,12 +433,12 @@
 
           <!-- Hero Action Buttons -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 mb-8">
-            <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%20want%20to%20start%20a%20project.%20My%20target%20timeline%20is..." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-glow-emerald transition transform hover:-translate-y-0.5">
+            <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%20want%20to%20start%20a%20project.%20My%20target%20timeline%20is..." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-sm transition">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
-              <span>Chat on WhatsApp</span>
+              <span>Message us on WhatsApp</span>
             </a>
             <a href="#portfolio" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-base transition">
-              <span>View Live Projects</span>
+              <span>See our work</span>
               <span>&rarr;</span>
             </a>
           </div>
@@ -189,99 +451,10 @@
           </div>
         </div>
 
-        <!-- Right Column: Interactive Layered Product UI Mockup -->
-        <div class="lg:col-span-5 relative">
-          <!-- Main Browser Window Card -->
-          <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-md">
-            <!-- Browser Top Bar -->
-            <div class="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-800">
-              <div class="flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-              </div>
-              <div class="bg-slate-800 px-3 py-1 rounded-md text-[11px] text-slate-400 font-mono">
-                app.yourbusiness.lk
-              </div>
-              <span class="text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">99/100 Speed</span>
-            </div>
-
-            <!-- Interactive Preview Tabs inside Mockup -->
-            <div class="flex gap-2 mb-4">
-              <button onclick="switchHeroMockup('web')" id="mock-tab-web" class="flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-cobalt text-white transition">WebApp Dashboard</button>
-              <button onclick="switchHeroMockup('mobile')" id="mock-tab-mobile" class="flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Mobile App UI</button>
-            </div>
-
-            <!-- Mockup Content: WebApp View -->
-            <div id="mock-view-web" class="space-y-3.5">
-              <div class="grid grid-cols-2 gap-3">
-                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700/60">
-                  <p class="text-[11px] text-slate-400">Monthly Orders</p>
-                  <p class="text-xl font-display font-bold text-white mt-0.5">+148%</p>
-                  <span class="text-[10px] text-emerald-400 font-medium">&uarr; Automated via WebApp</span>
-                </div>
-                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700/60">
-                  <p class="text-[11px] text-slate-400">Delivery Status</p>
-                  <p class="text-xl font-display font-bold text-emerald-400 mt-0.5">On Time</p>
-                  <span class="text-[10px] text-slate-400 font-medium">Launched in 7 Days</span>
-                </div>
-              </div>
-              <!-- Simulated Revenue Bar Chart -->
-              <div class="bg-slate-800/60 p-3.5 rounded-xl border border-slate-700/60">
-                <div class="flex justify-between items-center mb-2">
-                  <span class="text-xs font-semibold text-slate-200">Live Conversion Growth</span>
-                  <span class="text-[11px] text-emerald-400 font-semibold">Active</span>
-                </div>
-                <div class="flex items-end gap-2 h-20 pt-2">
-                  <div class="flex-1 bg-cobalt/40 rounded-t h-[38%]"></div>
-                  <div class="flex-1 bg-cobalt/60 rounded-t h-[52%]"></div>
-                  <div class="flex-1 bg-cobalt/75 rounded-t h-[65%]"></div>
-                  <div class="flex-1 bg-cobalt rounded-t h-[82%]"></div>
-                  <div class="flex-1 bg-emeraldBrand rounded-t h-[100%]"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mockup Content: Mobile App View -->
-            <div id="mock-view-mobile" class="hidden space-y-3">
-              <div class="bg-slate-800/90 rounded-xl p-4 border border-slate-700/70 flex items-center justify-between">
-                <div>
-                  <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold">iOS & Android Build</span>
-                  <h4 class="font-display font-bold text-white text-sm mt-0.5">Customer Booking & POS App</h4>
-                  <p class="text-xs text-slate-400 mt-1">Push notifications • Real-time sync</p>
-                </div>
-                <div class="w-11 h-11 rounded-xl bg-emeraldBrand/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
-                  APK
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-2 text-center">
-                <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700/50">
-                  <p class="text-xs font-bold text-white">60 FPS</p>
-                  <p class="text-[10px] text-slate-400">Smooth UI</p>
-                </div>
-                <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700/50">
-                  <p class="text-xs font-bold text-white">Offline</p>
-                  <p class="text-[10px] text-slate-400">Ready</p>
-                </div>
-                <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700/50">
-                  <p class="text-xs font-bold text-emerald-400">$300+</p>
-                  <p class="text-[10px] text-slate-400">Fixed Cost</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Deadline Commitment Badge -->
-          <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-5 sm:-left-5 bg-white text-obsidian px-4 py-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <p class="font-display font-extrabold text-sm text-obsidian">100% On-Time Delivery</p>
-              <p class="text-xs text-slate-500">Your deadline locked before kickoff</p>
-            </div>
+        <!-- Right Column: GlobeTech Logo -->
+        <div class="lg:col-span-5 flex items-center justify-center">
+          <div class="hero-mockup w-full overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-xl">
+            <img src="GlobeTech%20Blue%20Orbital%20Logo.png" alt="GlobeTech logo" class="block w-full h-auto object-contain">
           </div>
         </div>
 
@@ -290,7 +463,7 @@
   </section>
 
   <!-- 4. TRUST & METRICS BAR -->
-  <section class="bg-slate-50 border-b border-slate-200/80 py-8 sm:py-10">
+  <section class="trust-strip bg-white border-b border-slate-200/80 py-8 sm:py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center sm:text-left">
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
@@ -340,7 +513,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         <!-- Card 1 -->
-        <div class="reveal bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
+        <div class="reveal depth-card bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
           <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-5">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -351,7 +524,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="reveal bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
+        <div class="reveal depth-card bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
           <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -362,7 +535,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="reveal bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
+        <div class="reveal depth-card bg-slate-50 border border-slate-200/80 rounded-2xl p-7 hover:shadow-soft transition">
           <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center mb-5">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3"/></svg>
           </div>
@@ -393,7 +566,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 sm:gap-8">
         
         <!-- Service 1: Websites -->
-        <div class="reveal bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 flex flex-col justify-between hover:shadow-card-hover hover:-translate-y-1 transition-all">
+        <div class="reveal depth-card bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 flex flex-col justify-between hover:shadow-card-hover hover:-translate-y-1 transition-all">
           <div>
             <div class="flex items-center justify-between gap-2 mb-5">
               <span class="px-3 py-1 rounded-lg bg-blue-50 text-cobalt text-xs font-bold uppercase tracking-wide">Websites</span>
@@ -434,25 +607,25 @@
         </div>
 
         <!-- Service 2: WebApps (Featured) -->
-        <div class="reveal bg-obsidian text-white rounded-2xl border-2 border-cobalt p-7 sm:p-8 flex flex-col justify-between shadow-xl relative hover:-translate-y-1 transition-all">
+        <div class="reveal depth-card bg-white text-obsidian rounded-2xl border border-cobalt/40 p-7 sm:p-8 flex flex-col justify-between shadow-sm relative hover:-translate-y-1 transition-all">
           <div class="absolute -top-3.5 right-6 bg-cobalt text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
             Most Popular for Growth
           </div>
           <div>
             <div class="flex items-center justify-between gap-2 mb-5">
-              <span class="px-3 py-1 rounded-lg bg-white/10 text-emerald-300 text-xs font-bold uppercase tracking-wide">WebApps</span>
-              <span class="text-xs font-semibold text-slate-400">7–14 Days Delivery</span>
+              <span class="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wide">WebApps</span>
+              <span class="text-xs font-semibold text-slate-500">7–14 Days Delivery</span>
             </div>
-            <h3 class="font-display font-bold text-2xl text-white mb-2">Custom Web Applications</h3>
+            <h3 class="font-display font-bold text-2xl text-obsidian mb-2">Custom Web Applications</h3>
             <div class="flex items-baseline gap-1.5 mb-4">
-              <span class="text-sm text-slate-400">From</span>
-              <span class="font-display font-extrabold text-3xl text-white">$250</span>
-              <span class="text-xs text-slate-400">– $450</span>
+              <span class="text-sm text-slate-500">From</span>
+              <span class="font-display font-extrabold text-3xl text-obsidian">$250</span>
+              <span class="text-xs text-slate-500">– $450</span>
             </div>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
               Tailored dashboards, booking engines, POS/inventory systems, and SaaS MVPs built to automate your daily operations.
             </p>
-            <ul class="space-y-3 text-sm text-slate-200 mb-8">
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
               <li class="flex items-center gap-2.5">
                 <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 <span>Custom Admin Dashboard & User Roles</span>
@@ -471,14 +644,14 @@
               </li>
             </ul>
           </div>
-          <button onclick="openQuoteModal('Custom WebApp ($250–$450)')" class="w-full py-3.5 px-5 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-sm shadow-glow-emerald transition flex items-center justify-center gap-2">
+          <button onclick="openQuoteModal('Custom WebApp ($250–$450)')" class="w-full py-3.5 px-5 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-sm shadow-sm transition flex items-center justify-center gap-2">
             <span>Configure WebApp Quote</span>
             <span>&rarr;</span>
           </button>
         </div>
 
         <!-- Service 3: Mobile Apps -->
-        <div class="reveal bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 flex flex-col justify-between hover:shadow-card-hover hover:-translate-y-1 transition-all">
+        <div class="reveal depth-card bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 flex flex-col justify-between hover:shadow-card-hover hover:-translate-y-1 transition-all">
           <div>
             <div class="flex items-center justify-between gap-2 mb-5">
               <span class="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wide">Mobile Apps</span>
@@ -546,8 +719,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-7 sm:gap-8">
         
         <!-- Project 1 -->
-        <article class="portfolio-card reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="website">
-          <div class="h-48 bg-gradient-to-br from-slate-900 via-blue-950 to-cobalt p-6 flex flex-col justify-between relative overflow-hidden">
+        <article class="portfolio-card reveal depth-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="website">
+          <div class="h-48 bg-slate-900 p-6 flex flex-col justify-between relative overflow-hidden">
+            <img src="portfolio-retail.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-950/55"></div>
             <div class="flex justify-between items-center z-10">
               <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-white text-[11px] font-semibold">Website</span>
               <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">Delivered in 5 Days</span>
@@ -556,7 +731,6 @@
               <p class="text-white/70 text-xs font-mono">Retail & Commercial</p>
               <h4 class="font-display font-bold text-white text-lg">LankaPrime Agro & Hardware</h4>
             </div>
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-white/10 group-hover:scale-125 transition-transform"></div>
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
@@ -572,8 +746,10 @@
         </article>
 
         <!-- Project 2 -->
-        <article class="portfolio-card reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="webapp">
-          <div class="h-48 bg-gradient-to-br from-obsidian via-slate-800 to-emerald-950 p-6 flex flex-col justify-between relative overflow-hidden">
+        <article class="portfolio-card reveal depth-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="webapp">
+          <div class="h-48 bg-obsidian p-6 flex flex-col justify-between relative overflow-hidden">
+            <img src="portfolio-dashboard.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-950/55"></div>
             <div class="flex justify-between items-center z-10">
               <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-white text-[11px] font-semibold">WebApp</span>
               <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">Delivered in 11 Days</span>
@@ -582,7 +758,6 @@
               <p class="text-white/70 text-xs font-mono">SaaS & Operations</p>
               <h4 class="font-display font-bold text-white text-lg">SwiftStock POS & Billing Portal</h4>
             </div>
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-emerald-400/10 group-hover:scale-125 transition-transform"></div>
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
@@ -598,8 +773,10 @@
         </article>
 
         <!-- Project 3 -->
-        <article class="portfolio-card reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="mobile">
-          <div class="h-48 bg-gradient-to-br from-indigo-950 via-slate-900 to-purple-950 p-6 flex flex-col justify-between relative overflow-hidden">
+        <article class="portfolio-card reveal depth-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition group" data-category="mobile">
+          <div class="h-48 bg-indigo-950 p-6 flex flex-col justify-between relative overflow-hidden">
+            <img src="portfolio-mobile.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-950/55"></div>
             <div class="flex justify-between items-center z-10">
               <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-white text-[11px] font-semibold">Mobile App</span>
               <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">Delivered in 14 Days</span>
@@ -608,7 +785,6 @@
               <p class="text-white/70 text-xs font-mono">iOS & Android</p>
               <h4 class="font-display font-bold text-white text-lg">QuickRide & Delivery Booking App</h4>
             </div>
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-purple-400/10 group-hover:scale-125 transition-transform"></div>
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
@@ -642,22 +818,22 @@
 
       <!-- 4 Steps Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+        <div class="reveal depth-card bg-white p-6 rounded-2xl border border-slate-200 relative">
           <span class="font-display font-extrabold text-4xl text-blue-100 block mb-3">01</span>
           <h3 class="font-display font-bold text-lg text-obsidian mb-2">15-Min Scope & Quote</h3>
           <p class="text-slate-600 text-sm leading-relaxed">Share your idea and target launch date. Receive a clear, fixed quote ($100–$500) the very same day.</p>
         </div>
-        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+        <div class="reveal depth-card bg-white p-6 rounded-2xl border border-slate-200 relative">
           <span class="font-display font-extrabold text-4xl text-blue-100 block mb-3">02</span>
           <h3 class="font-display font-bold text-lg text-obsidian mb-2">UI Wireframe & Kickoff</h3>
           <p class="text-slate-600 text-sm leading-relaxed">Review and approve the visual layout and user flow before full coding begins—zero guesswork.</p>
         </div>
-        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+        <div class="reveal depth-card bg-white p-6 rounded-2xl border border-slate-200 relative">
           <span class="font-display font-extrabold text-4xl text-blue-100 block mb-3">03</span>
           <h3 class="font-display font-bold text-lg text-obsidian mb-2">Rapid Build & Previews</h3>
           <p class="text-slate-600 text-sm leading-relaxed">Track progress via private live staging links with direct WhatsApp updates as features go live.</p>
         </div>
-        <div class="reveal bg-white p-6 rounded-2xl border border-slate-200 relative">
+        <div class="reveal depth-card bg-white p-6 rounded-2xl border border-slate-200 relative">
           <span class="font-display font-extrabold text-4xl text-emerald-100 block mb-3">04</span>
           <h3 class="font-display font-bold text-lg text-obsidian mb-2">On-Time Launch</h3>
           <p class="text-slate-600 text-sm leading-relaxed">Full testing on mobile & desktop, live deployment, and 100% source code & account handover.</p>
@@ -679,7 +855,7 @@
           </p>
         </div>
         <div class="w-full lg:w-auto shrink-0">
-          <button onclick="openQuoteModal('Deadline-Guaranteed Project')" class="w-full lg:w-auto px-7 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-glow-emerald transition">
+          <button onclick="openQuoteModal('Deadline-Guaranteed Project')" class="w-full lg:w-auto px-7 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-sm transition">
             Lock In Your Launch Date &rarr;
           </button>
         </div>
@@ -699,7 +875,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
         <!-- Review 1 -->
-        <div class="reveal bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
+        <div class="reveal depth-card bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="flex text-amber-400 mb-4" aria-label="5 out of 5 stars">
               ★★★★★
@@ -718,7 +894,7 @@
         </div>
 
         <!-- Review 2 -->
-        <div class="reveal bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
+        <div class="reveal depth-card bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="flex text-amber-400 mb-4" aria-label="5 out of 5 stars">
               ★★★★★
@@ -737,7 +913,7 @@
         </div>
 
         <!-- Review 3 -->
-        <div class="reveal bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
+        <div class="reveal depth-card bg-slate-50 border border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between">
           <div>
             <div class="flex text-amber-400 mb-4" aria-label="5 out of 5 stars">
               ★★★★★
@@ -828,7 +1004,7 @@
   </section>
 
   <!-- 11. FINAL CTA BANNER -->
-  <section class="bg-obsidian hero-grid-bg text-white py-16 sm:py-24 relative overflow-hidden">
+  <section class="final-cta bg-obsidian text-white py-16 sm:py-24 relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
       <span class="inline-block px-3.5 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">
         Start Today • Kiribbewa, Sri Lanka & Worldwide
@@ -840,7 +1016,7 @@
         Message me directly with your project idea and target deadline. Get a fixed quote between $100 and $500 and let’s build something your customers love.
       </p>
       <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
-        <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27m%20ready%20to%20discuss%20my%20project!" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-glow-emerald transition">
+        <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27m%20ready%20to%20discuss%20my%20project!" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-emeraldBrand hover:bg-emerald-500 text-white font-semibold text-base shadow-sm transition">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
           <span>Message on WhatsApp Now</span>
         </a>
@@ -858,7 +1034,9 @@
         <!-- Brand Info -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-2.5 mb-4">
-            <div class="w-9 h-9 rounded-xl bg-cobalt flex items-center justify-center text-white font-bold">G</div>
+            <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center overflow-hidden p-1">
+              <img src="GlobeTech%20Blue%20Orbital%20Logo.png" alt="GlobeTech logo" class="w-full h-full object-contain">
+            </div>
             <span class="font-display font-extrabold text-xl text-white">Globe<span class="text-cobalt">Tech</span></span>
           </div>
           <p class="text-sm text-slate-400 max-w-md leading-relaxed mb-4">
@@ -905,7 +1083,7 @@
     </button>
     <a href="https://wa.me/94774483601?text=Hi%20GlobeTech%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="flex-[1.4] py-3 px-4 rounded-xl bg-emeraldBrand text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-sm">
       <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
-      <span>Chat on WhatsApp</span>
+      <span>Message us</span>
     </a>
   </div>
 
@@ -951,7 +1129,7 @@
           <textarea id="quote-notes" rows="3" placeholder="Briefly describe what you need (e.g., 5-page company site, online booking, POS app)..." class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-cobalt"></textarea>
         </div>
 
-        <button type="submit" class="w-full py-4 px-6 rounded-xl bg-emeraldBrand hover:bg-emerald-600 text-white font-semibold text-sm sm:text-base shadow-glow-emerald transition flex items-center justify-center gap-2">
+        <button type="submit" class="w-full py-4 px-6 rounded-xl bg-emeraldBrand hover:bg-emerald-600 text-white font-semibold text-sm sm:text-base shadow-sm transition flex items-center justify-center gap-2">
           <span>Send Brief via WhatsApp</span>
           <span>&rarr;</span>
         </button>
@@ -974,27 +1152,17 @@
       link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
 
-    // 3. Hero Interactive Mockup Switcher
-    function switchHeroMockup(type) {
-      const webTab = document.getElementById('mock-tab-web');
-      const mobileTab = document.getElementById('mock-tab-mobile');
-      const webView = document.getElementById('mock-view-web');
-      const mobileView = document.getElementById('mock-view-mobile');
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const isDarkMode = document.documentElement.classList.toggle('dark-mode');
+      const nextMode = isDarkMode ? 'light' : 'dark';
+      themeToggle.setAttribute('aria-pressed', String(isDarkMode));
+      themeToggle.setAttribute('aria-label', `Switch to ${nextMode} mode`);
+      themeToggle.setAttribute('title', `Switch to ${nextMode} mode`);
+    });
 
-      if (type === 'web') {
-        webTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-cobalt text-white transition';
-        mobileTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
-        webView.classList.remove('hidden');
-        mobileView.classList.add('hidden');
-      } else {
-        mobileTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-cobalt text-white transition';
-        webTab.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
-        mobileView.classList.remove('hidden');
-        webView.classList.add('hidden');
-      }
-    }
-
-    // 4. Portfolio Category Filter
+    // 3. Portfolio Category Filter
     function filterPortfolio(category) {
       const buttons = document.querySelectorAll('.portfolio-filter');
       const cards = document.querySelectorAll('.portfolio-card');
@@ -1016,7 +1184,7 @@
       });
     }
 
-    // 5. FAQ Accordion Logic
+    // 4. FAQ Accordion Logic
     document.querySelectorAll('.faq-btn').forEach(button => {
       button.addEventListener('click', () => {
         const item = button.parentElement;
@@ -1039,7 +1207,7 @@
       });
     });
 
-    // 6. Quote Estimator Modal Controls & WhatsApp Redirect
+    // 5. Quote Estimator Modal Controls & WhatsApp Redirect
     const quoteModal = document.getElementById('quote-modal');
     const quoteServiceSelect = document.getElementById('quote-service');
     const quoteNotesInput = document.getElementById('quote-notes');
@@ -1077,7 +1245,7 @@
       closeQuoteModal();
     });
 
-    // 7. Scroll Reveal Intersection Observer
+    // 6. Scroll Reveal Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
